@@ -1,5 +1,11 @@
 {
   "name": "cytoid-storyboard-editor",
+  "author": {
+    "name": "CrowFX",
+    "email": "tigor.hutasuhut@gmail.com",
+    "url": "https://www.github.com/TigorLazuardi"
+  },
+  "main": "public/electron.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=NONE npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +42,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1",
+    "electron-is-dev": "^1.1.0",
+    "wait-on": "^4.0.1"
   }
 }
