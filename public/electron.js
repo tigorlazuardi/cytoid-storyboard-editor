@@ -1,3 +1,4 @@
+'use strict'
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
@@ -11,7 +12,7 @@ const createWindow = () => {
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../build/index.html')}`
   )
-  isdev && w.webContents.openDevTools()
+  isDev && w.webContents.openDevTools()
   w.on('closed', () => (w = null))
 }
 

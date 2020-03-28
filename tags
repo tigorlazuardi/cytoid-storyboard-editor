@@ -6,11 +6,6 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
-.App	src/App.css	/^.App {$/;"	c
-.App-header	src/App.css	/^.App-header {$/;"	c
-.App-link	src/App.css	/^.App-link {$/;"	c
-.App-logo	src/App.css	/^  .App-logo {$/;"	c
-.App-logo	src/App.css	/^.App-logo {$/;"	c
 0	package.json	/^      ">0.2%",$/;"	s	array:browserslist.production
 0	package.json	/^      "last 1 chrome version",$/;"	s	array:browserslist.development
 0	public/manifest.json	/^    {$/;"	o	array:icons
@@ -24,6 +19,7 @@
 2	package.json	/^      "not op_mini all"$/;"	s	array:browserslist.production
 2	public/manifest.json	/^    {$/;"	o	array:icons
 2	tsconfig.json	/^      "esnext"$/;"	s	array:compilerOptions.lib
+@material-ui/core	package.json	/^    "@material-ui\/core": "^4.9.7",$/;"	s	object:dependencies
 @testing-library/jest-dom	package.json	/^    "@testing-library\/jest-dom": "^4.2.4",$/;"	s	object:dependencies
 @testing-library/react	package.json	/^    "@testing-library\/react": "^9.3.2",$/;"	s	object:dependencies
 @testing-library/user-event	package.json	/^    "@testing-library\/user-event": "^7.1.2",$/;"	s	object:dependencies
@@ -31,43 +27,93 @@
 @types/node	package.json	/^    "@types\/node": "^12.0.0",$/;"	s	object:dependencies
 @types/react	package.json	/^    "@types\/react": "^16.9.0",$/;"	s	object:dependencies
 @types/react-dom	package.json	/^    "@types\/react-dom": "^16.9.0",$/;"	s	object:dependencies
+@types/react-router-dom	package.json	/^    "@types\/react-router-dom": "^5.1.3",$/;"	s	object:devDependencies
+ArcadeContrast	src/models/controller.ts	/^  ArcadeContrast?: number$/;"	p	interface:State
 Available Scripts	README.md	/^## Available Scripts$/;"	s
-Config	src/serviceWorker.ts	/^type Config = {$/;"	a
+Err	src/models/result_handling.ts	/^  public static Err<T>(error: T) {$/;"	m	class:Result
 Learn More	README.md	/^## Learn More$/;"	s
+MapFns	src/models/result_handling.ts	/^interface MapFns<T, E, TResult, EResult> {$/;"	i
+NoteFillColor	src/models/controller.ts	/^  NoteFillColor?: string[]$/;"	p	interface:State
+Ok	src/models/result_handling.ts	/^  public static Ok<T>(success: T) {$/;"	m	class:Result
+Result	src/models/result_handling.ts	/^export default class Result<TSuccess, TError> {$/;"	c
+Sprite	src/models/sprite.ts	/^export default class Sprite {$/;"	c
+State	src/models/controller.ts	/^export default interface State {$/;"	i
+Tape	src/models/controller.ts	/^  Tape?: boolean$/;"	p	interface:State
 `yarn build`	README.md	/^### `yarn build`$/;"	S
 `yarn eject`	README.md	/^### `yarn eject`$/;"	S
 `yarn start`	README.md	/^### `yarn start`$/;"	S
 `yarn test`	README.md	/^### `yarn test`$/;"	S
+addNewState	src/models/sprite.ts	/^  addNewState(state: State) {$/;"	m	class:Sprite
+add_time	src/models/controller.ts	/^  add_time?: number$/;"	p	interface:State
 allowJs	tsconfig.json	/^    "allowJs": true,$/;"	b	object:compilerOptions
 allowSyntheticDefaultImports	tsconfig.json	/^    "allowSyntheticDefaultImports": true,$/;"	b	object:compilerOptions
+arcade	src/models/controller.ts	/^  arcade?: boolean$/;"	p	interface:State
+arcade_intensity	src/models/controller.ts	/^  arcade_intensity?: number$/;"	p	interface:State
+arcade_interference_size	src/models/controller.ts	/^  arcade_interference_size?: number$/;"	p	interface:State
+arcade_interference_speed	src/models/controller.ts	/^  arcade_interference_speed?: number$/;"	p	interface:State
 author	package.json	/^  "author": {$/;"	o
 background_color	public/manifest.json	/^  "background_color": "#ffffff"$/;"	s
+background_dim	src/models/controller.ts	/^  background_dim?: number$/;"	p	interface:State
+bloom	src/models/controller.ts	/^  bloom?: boolean$/;"	p	interface:State
+bloom_intensity	src/models/controller.ts	/^  bloom_intensity?: number$/;"	p	interface:State
 body	src/index.css	/^body {$/;"	s
+brightness	src/models/controller.ts	/^  brightness?: number$/;"	p	interface:State
 browserslist	package.json	/^  "browserslist": {$/;"	o
 build	package.json	/^    "build": "react-scripts build",$/;"	s	object:scripts
-checkValidServiceWorker	src/serviceWorker.ts	/^function checkValidServiceWorker(swUrl: string, config?: Config) {$/;"	f
+chomatical_intensity	src/models/controller.ts	/^  chomatical_intensity?: number$/;"	p	interface:State
+chromatic	src/models/controller.ts	/^  chromatic?: boolean$/;"	p	interface:State
+chromatic_end	src/models/controller.ts	/^  chromatic_end?: number$/;"	p	interface:State
+chromatic_intensity	src/models/controller.ts	/^  chromatic_intensity?: number$/;"	p	interface:State
+chromatic_start	src/models/controller.ts	/^  chromatic_start?: number$/;"	p	interface:State
+chromatical	src/models/controller.ts	/^  chromatical?: boolean$/;"	p	interface:State
+chromatical_fade	src/models/controller.ts	/^  chromatical_fade?: number$/;"	p	interface:State
+chromatical_speed	src/models/controller.ts	/^  chromatical_speed?: number$/;"	p	interface:State
 code	src/index.css	/^code {$/;"	s
+color_adjustment	src/models/controller.ts	/^  color_adjustment?: boolean$/;"	p	interface:State
+color_filter	src/models/controller.ts	/^  color_filter?: boolean$/;"	p	interface:State
+color_filter_color	src/models/controller.ts	/^  color_filter_color?: string$/;"	p	interface:State
 compilerOptions	tsconfig.json	/^  "compilerOptions": {$/;"	o
 concurrently	package.json	/^    "concurrently": "^5.1.0",$/;"	s	object:devDependencies
-contentType	src/serviceWorker.ts	/^      const contentType = response.headers.get('content-type');$/;"	C	function:checkValidServiceWorker
+constructor	src/models/result_handling.ts	/^  constructor($/;"	m	class:Result
+constructor	src/models/sprite.ts	/^  constructor(id: number, path: string, time: string | number) {$/;"	m	class:Sprite
+contrast	src/models/controller.ts	/^  contrast?: number$/;"	p	interface:State
+createWindow	public/electron.js	/^const createWindow = () => {$/;"	C
+deleteState	src/models/sprite.ts	/^  deleteState(index: number): Result<boolean, string> {$/;"	m	class:Sprite
 dependencies	package.json	/^  "dependencies": {$/;"	o
 devDependencies	package.json	/^  "devDependencies": {$/;"	o
 development	package.json	/^    "development": [$/;"	a	object:browserslist
 display	public/manifest.json	/^  "display": "standalone",$/;"	s
+dream	src/models/controller.ts	/^  dream?: boolean$/;"	p	interface:State
+dream_intensity	src/models/controller.ts	/^  dream_intensity?: number$/;"	p	interface:State
 eject	package.json	/^    "eject": "react-scripts eject",$/;"	s	object:scripts
 electron	package.json	/^    "electron": "^8.2.0",$/;"	s	object:devDependencies
 electron-builder	package.json	/^    "electron-builder": "^22.4.1",$/;"	s	object:devDependencies
 electron-dev	package.json	/^    "electron-dev": "concurrently \\"BROWSER=NONE npm start\\" \\"wait-on http:\/\/localhost:300/;"	s	object:scripts
 electron-is-dev	package.json	/^    "electron-is-dev": "^1.1.0",$/;"	s	object:devDependencies
 email	package.json	/^    "email": "tigor.hutasuhut@gmail.com",$/;"	s	object:author
+error	src/models/result_handling.ts	/^    private error: TError,$/;"	p	class:Result
 esModuleInterop	tsconfig.json	/^    "esModuleInterop": true,$/;"	b	object:compilerOptions
 eslintConfig	package.json	/^  "eslintConfig": {$/;"	o
 extends	package.json	/^    "extends": "react-app"$/;"	s	object:eslintConfig
+fail	src/models/result_handling.ts	/^  fail: (a: E) => EResult$/;"	p	interface:MapFns
+fisheye	src/models/controller.ts	/^  fisheye?: boolean$/;"	p	interface:State
+fisheye_intensity	src/models/controller.ts	/^  fisheye_intensity?: number$/;"	p	interface:State
+focus	src/models/controller.ts	/^  focus?: boolean$/;"	p	interface:State
+focus_color	src/models/controller.ts	/^  focus_color?: string$/;"	p	interface:State
+focus_intensity	src/models/controller.ts	/^  focus_intensity?: number$/;"	p	interface:State
+focus_size	src/models/controller.ts	/^  focus_size?: number$/;"	p	interface:State
+focus_speed	src/models/controller.ts	/^  focus_speed?: number$/;"	p	interface:State
 forceConsistentCasingInFileNames	tsconfig.json	/^    "forceConsistentCasingInFileNames": true,$/;"	b	object:compilerOptions
+fov	src/models/controller.ts	/^  fov?: number$/;"	p	interface:State
+glitch	src/models/controller.ts	/^  glitch?: boolean$/;"	p	interface:State
+glitch_intensity	src/models/controller.ts	/^  glitch_intensity?: number$/;"	p	interface:State
+gray_scale	src/models/controller.ts	/^  gray_scale?: boolean$/;"	p	interface:State
+gray_scale_intensity	src/models/controller.ts	/^  gray_scale_intensity?: number$/;"	p	interface:State
 icons	public/manifest.json	/^  "icons": [$/;"	a
+id	src/models/sprite.ts	/^  public id: number$/;"	p	class:Sprite
 include	tsconfig.json	/^  "include": [$/;"	a
-installingWorker	src/serviceWorker.ts	/^        const installingWorker = registration.installing;$/;"	C	function:registerValidSW
-isLocalhost	src/serviceWorker.ts	/^const isLocalhost = Boolean($/;"	C
+isDev	public/electron.js	/^const isDev = require('electron-is-dev')$/;"	C
+isError	src/models/result_handling.ts	/^    private isError: boolean$/;"	p	class:Result
 isolatedModules	tsconfig.json	/^    "isolatedModules": true,$/;"	b	object:compilerOptions
 jsx	tsconfig.json	/^    "jsx": "react"$/;"	s	object:compilerOptions
 lib	tsconfig.json	/^    "lib": [$/;"	a	object:compilerOptions
@@ -78,19 +124,41 @@ name	package.json	/^    "name": "CrowFX",$/;"	s	object:author
 name	package.json	/^  "name": "cytoid-storyboard-editor",$/;"	s
 name	public/manifest.json	/^  "name": "Create React App Sample",$/;"	s
 noEmit	tsconfig.json	/^    "noEmit": true,$/;"	b	object:compilerOptions
-nsb0aa9e8b0101	src/logo.svg	/^<svg xmlns="http:\/\/www.w3.org\/2000\/svg" viewBox="0 0 841.9 595.3">$/;"	n	uri:http://www.w3.org/2000/svg
+noise	src/models/controller.ts	/^  noise?: boolean$/;"	p	interface:State
+noise_intensity	src/models/controller.ts	/^  noise_intensity?: number$/;"	p	interface:State
+note_opacity_multiplier	src/models/controller.ts	/^  note_opacity_multiplier?: number$/;"	p	interface:State
+note_ring_color	src/models/controller.ts	/^  note_ring_color?: string$/;"	p	interface:State
+ok	src/models/result_handling.ts	/^  ok: (a: T) => TResult$/;"	p	interface:MapFns
+opacity	src/models/controller.ts	/^  opacity?: number$/;"	p	interface:State
+override_scanline_pos	src/models/controller.ts	/^  override_scanline_pos?: boolean$/;"	p	interface:State
+path	public/electron.js	/^const path = require('path')$/;"	C
+path	src/models/sprite.ts	/^  public path: string$/;"	p	class:Sprite
+perspective	src/models/controller.ts	/^  perspective?: boolean$/;"	p	interface:State
 private	package.json	/^  "private": true,$/;"	b
 production	package.json	/^    "production": [$/;"	a	object:browserslist
-publicUrl	src/serviceWorker.ts	/^    const publicUrl = new URL($/;"	C	function:register
+radial_blur	src/models/controller.ts	/^  radial_blur?: boolean$/;"	p	interface:State
+radial_blur_intensity	src/models/controller.ts	/^  radial_blur_intensity?: number$/;"	p	interface:State
 react	package.json	/^    "react": "^16.13.1",$/;"	s	object:dependencies
 react-dom	package.json	/^    "react-dom": "^16.13.1",$/;"	s	object:dependencies
+react-router-dom	package.json	/^    "react-router-dom": "^5.1.2",$/;"	s	object:dependencies
 react-scripts	package.json	/^    "react-scripts": "3.4.1",$/;"	s	object:dependencies
-register	src/serviceWorker.ts	/^export function register(config?: Config) {$/;"	f
-registerValidSW	src/serviceWorker.ts	/^function registerValidSW(swUrl: string, config?: Config) {$/;"	f
+relative_time	src/models/controller.ts	/^  relative_time?: number$/;"	p	interface:State
 resolveJsonModule	tsconfig.json	/^    "resolveJsonModule": true,$/;"	b	object:compilerOptions
 root	public/index.html	/^    <div id="root"><\/div>$/;"	I
+rot_x	src/models/controller.ts	/^  rot_x?: number$/;"	p	interface:State
+rot_y	src/models/controller.ts	/^  rot_y?: number$/;"	p	interface:State
+rot_z	src/models/controller.ts	/^  rot_z?: number$/;"	p	interface:State
+saturation	src/models/controller.ts	/^  saturation?: number$/;"	p	interface:State
+scanline_color	src/models/controller.ts	/^  scanline_color?: string$/;"	p	interface:State
+scanline_opacity	src/models/controller.ts	/^  scanline_opacity?: number$/;"	p	interface:State
+scanline_pos	src/models/controller.ts	/^  scanline_pos?: number$/;"	p	interface:State
 scripts	package.json	/^  "scripts": {$/;"	o
+sepia	src/models/controller.ts	/^  sepia?: boolean$/;"	p	interface:State
+sepia_intensity	src/models/controller.ts	/^  sepia_intensity?: number$/;"	p	interface:State
+shockwave	src/models/controller.ts	/^  shockwave?: boolean$/;"	p	interface:State
+shockwave_speed	src/models/controller.ts	/^  shockwave_speed?: number$/;"	p	interface:State
 short_name	public/manifest.json	/^  "short_name": "React App",$/;"	s
+size	src/models/controller.ts	/^  size?: number$/;"	p	interface:State
 sizes	public/manifest.json	/^      "sizes": "192x192"$/;"	s	object:icons.1
 sizes	public/manifest.json	/^      "sizes": "512x512"$/;"	s	object:icons.2
 sizes	public/manifest.json	/^      "sizes": "64x64 32x32 24x24 16x16",$/;"	s	object:icons.0
@@ -100,16 +168,33 @@ src	public/manifest.json	/^      "src": "logo192.png",$/;"	s	object:icons.1
 src	public/manifest.json	/^      "src": "logo512.png",$/;"	s	object:icons.2
 start	package.json	/^    "start": "react-scripts start",$/;"	s	object:scripts
 start_url	public/manifest.json	/^  "start_url": ".",$/;"	s
+state	src/models/sprite.ts	/^  public state: State[]$/;"	p	class:Sprite
+storyboard_opacity	src/models/controller.ts	/^  storyboard_opacity?: number$/;"	p	interface:State
 strict	tsconfig.json	/^    "strict": true,$/;"	b	object:compilerOptions
-swUrl	src/serviceWorker.ts	/^      const swUrl = `${process.env.PUBLIC_URL}\/service-worker.js`;$/;"	C	function:register
+success	src/models/result_handling.ts	/^    private success: TSuccess,$/;"	p	class:Result
 target	tsconfig.json	/^    "target": "es5",$/;"	s	object:compilerOptions
+template	src/models/controller.ts	/^  template?: string$/;"	p	interface:State
 test	package.json	/^    "test": "react-scripts test",$/;"	s	object:scripts
 theme_color	public/manifest.json	/^  "theme_color": "#000000",$/;"	s
+time	src/models/controller.ts	/^  time?: string$/;"	p	interface:State
+time	src/models/sprite.ts	/^  public time: string | number$/;"	p	class:Sprite
 type	public/manifest.json	/^      "type": "image\/png",$/;"	s	object:icons.1
 type	public/manifest.json	/^      "type": "image\/png",$/;"	s	object:icons.2
 type	public/manifest.json	/^      "type": "image\/x-icon"$/;"	s	object:icons.0
+typeface-roboto	package.json	/^    "typeface-roboto": "^0.0.75",$/;"	s	object:dependencies
 typescript	package.json	/^    "typescript": "~3.7.2"$/;"	s	object:dependencies
-unregister	src/serviceWorker.ts	/^export function unregister() {$/;"	f
+ui_opacity	src/models/controller.ts	/^  ui_opacity?: number$/;"	p	interface:State
+updateState	src/models/sprite.ts	/^  updateState(index: number, state: State): Result<boolean, string> {$/;"	m	class:Sprite
 url	package.json	/^    "url": "https:\/\/www.github.com\/TigorLazuardi"$/;"	s	object:author
 version	package.json	/^  "version": "0.1.0",$/;"	s
+vignette	src/models/controller.ts	/^  vignette?: boolean$/;"	p	interface:State
+vignette_color	src/models/controller.ts	/^  vignette_color?: string$/;"	p	interface:State
+vignette_end	src/models/controller.ts	/^  vignette_end?: number$/;"	p	interface:State
+vignette_intensity	src/models/controller.ts	/^  vignette_intensity?: number$/;"	p	interface:State
+vignette_start	src/models/controller.ts	/^  vignette_start?: number$/;"	p	interface:State
+w	public/electron.js	/^  w = new BrowserWindow({ minWidth: 600, minHeight: 480 })$/;"	v
+w	public/electron.js	/^let w$/;"	v
 wait-on	package.json	/^    "wait-on": "^4.0.1"$/;"	s	object:devDependencies
+when	src/models/result_handling.ts	/^  when<T, E>(mapFns: MapFns<TSuccess, TError, T, E>) {$/;"	m	class:Result
+x	src/models/controller.ts	/^  x?: number$/;"	p	interface:State
+y	src/models/controller.ts	/^  y?: number$/;"	p	interface:State
