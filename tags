@@ -79,7 +79,6 @@ constructor	src/models/result_handling.ts	/^  constructor($/;"	m	class:Result
 constructor	src/models/sprite.ts	/^  constructor(id: number, path: string, time: string | number) {$/;"	m	class:Sprite
 contrast	src/models/state.ts	/^  contrast?: number$/;"	p	interface:State
 createWindow	public/electron.js	/^const createWindow = () => {$/;"	C
-customize-cra	package.json	/^    "customize-cra": "^0.9.1",$/;"	s	object:devDependencies
 deleteState	src/models/sprite.ts	/^  deleteState(index: number): Result<boolean, string> {$/;"	m	class:Sprite
 dependencies	package.json	/^  "dependencies": {$/;"	o
 devDependencies	package.json	/^  "devDependencies": {$/;"	o
@@ -107,6 +106,7 @@ focus_size	src/models/state.ts	/^  focus_size?: number$/;"	p	interface:State
 focus_speed	src/models/state.ts	/^  focus_speed?: number$/;"	p	interface:State
 forceConsistentCasingInFileNames	tsconfig.json	/^    "forceConsistentCasingInFileNames": true,$/;"	b	object:compilerOptions
 fov	src/models/state.ts	/^  fov?: number$/;"	p	interface:State
+fs	src/config.ts	/^const fs = window.require('fs')$/;"	C
 glitch	src/models/state.ts	/^  glitch?: boolean$/;"	p	interface:State
 glitch_intensity	src/models/state.ts	/^  glitch_intensity?: number$/;"	p	interface:State
 gray_scale	src/models/state.ts	/^  gray_scale?: boolean$/;"	p	interface:State
@@ -144,7 +144,6 @@ production	package.json	/^    "production": [$/;"	a	object:browserslist
 radial_blur	src/models/state.ts	/^  radial_blur?: boolean$/;"	p	interface:State
 radial_blur_intensity	src/models/state.ts	/^  radial_blur_intensity?: number$/;"	p	interface:State
 react	package.json	/^    "react": "^16.13.1",$/;"	s	object:dependencies
-react-app-rewired	package.json	/^    "react-app-rewired": "^2.1.5",$/;"	s	object:devDependencies
 react-dom	package.json	/^    "react-dom": "^16.13.1",$/;"	s	object:dependencies
 react-router-dom	package.json	/^    "react-router-dom": "^5.1.2",$/;"	s	object:dependencies
 react-scripts	package.json	/^    "react-scripts": "3.4.1",$/;"	s	object:dependencies

@@ -21,10 +21,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 type Props = {
+  name: string
   open: boolean
 }
 
-const AppBar: FunctionComponent<Props> = ({ open }) => {
+const AppBar: FunctionComponent<Props> = ({ name, open }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
@@ -41,7 +42,7 @@ const AppBar: FunctionComponent<Props> = ({ open }) => {
               <Menu />
             </IconButton>
             <Typography variant='h6' className={classes.title}>
-              Home
+              {name}
             </Typography>
             <IconButton
               edge='end'

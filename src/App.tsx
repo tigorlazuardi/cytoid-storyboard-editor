@@ -1,13 +1,13 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Home from './views/Home'
+import Workbench from './views/Workbench'
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path='/'>
-          <Home />
+          <Workbench />
         </Route>
       </Switch>
     </Router>
