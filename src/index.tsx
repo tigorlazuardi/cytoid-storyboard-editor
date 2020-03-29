@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import 'typeface-roboto'
+import 'material-icons'
 
 ReactDOM.render(
   <React.StrictMode>

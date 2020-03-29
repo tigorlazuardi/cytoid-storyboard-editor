@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import AppBar from '../components/surface/AppBar'
 
 function Home() {
   return (
-    <div>
-      <p>Home of the benevolence</p>
-    </div>
+    <Fragment>
+      <AppBar open={true} />
+    </Fragment>
   )
 }
 
