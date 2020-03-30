@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBarShift: {
+    zIndex: theme.zIndex.drawer + 1,
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
     transition: theme.transitions.create(['width', 'margin'], {

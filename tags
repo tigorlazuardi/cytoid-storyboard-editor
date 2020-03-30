@@ -65,7 +65,7 @@ body	src/index.css	/^body {$/;"	s
 brightness	src/models/state.ts	/^  brightness?: number$/;"	p	interface:State
 browserslist	package.json	/^  "browserslist": {$/;"	o
 build	package.json	/^    "build": "react-scripts build",$/;"	s	object:scripts
-build-starter	package.json	/^    "build-starter": "tsc src\/electron.ts --outDir public --esModuleInterop",$/;"	s	object:scripts
+build-starter	package.json	/^    "build-starter": "test -f .\/public\/electron.js || tsc src\/electron.ts --outDir public --e/;"	s	object:scripts
 changeConfig	src/config.ts	/^  public changeConfig(config: Variable): Result<boolean, string[]> {$/;"	m	class:Config
 chomatical_intensity	src/models/state.ts	/^  chomatical_intensity?: number$/;"	p	interface:State
 chromatic	src/models/state.ts	/^  chromatic?: boolean$/;"	p	interface:State
@@ -75,6 +75,7 @@ chromatic_start	src/models/state.ts	/^  chromatic_start?: number$/;"	p	interface
 chromatical	src/models/state.ts	/^  chromatical?: boolean$/;"	p	interface:State
 chromatical_fade	src/models/state.ts	/^  chromatical_fade?: number$/;"	p	interface:State
 chromatical_speed	src/models/state.ts	/^  chromatical_speed?: number$/;"	p	interface:State
+clsx	package.json	/^    "clsx": "^1.1.0",$/;"	s	object:dependencies
 code	src/index.css	/^code {$/;"	s
 color_adjustment	src/models/state.ts	/^  color_adjustment?: boolean$/;"	p	interface:State
 color_filter	src/models/state.ts	/^  color_filter?: boolean$/;"	p	interface:State

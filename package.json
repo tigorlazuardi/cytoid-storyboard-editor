@@ -34,7 +34,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-starter": "tsc src/electron.ts --outDir public --esModuleInterop",
+    "build-starter": "test -f ./public/electron.js || tsc src/electron.ts --outDir public --esModuleInterop",
     "electron:dev": "npm run build-starter && concurrently \"BROWSER=NONE npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {

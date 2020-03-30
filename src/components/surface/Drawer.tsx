@@ -1,23 +1,39 @@
-import React, { FunctionComponent, ReactNode } from 'react'
-import { makeStyles, useTheme } from '@material-ui/core/styles'
-import D from '@material-ui/core/Drawer'
-import Mail from '@material-ui/icons/Mail'
+import React, {
+  FunctionComponent,
+  ReactNode,
+  MouseEvent,
+  ReactElement,
+} from 'react'
+import { makeStyles, Theme } from '@material-ui/core/styles'
+import Draw from '@material-ui/core/Drawer'
 import clsx from 'clsx'
+import Typography from '@material-ui/core/Typography'
+import Divider from '@material-ui/core/Divider'
+import Icon from '@material-ui/core/Icon'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
 
 const drawerWidth = 240
 
-type Props = {
+interface Props {
   open: boolean
   entries: Entries[]
+  anchor?: 'left' | 'right'
+  header: {
+    name: string
+    icon?: ReactNode
+  }
 }
 
-type Entries = {
+export type Entries = {
   name: string
-  icon: ReactNode
-  action: Function
+  icon: ReactElement
+  action: (event: MouseEvent) => void
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: 'flex',
   },
@@ -51,18 +67,25 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
   },
+  headerIcon: {
+    paddingRight: theme.spacing(1),
+  },
 }))
 
-const Drawer: FunctionComponent<Props> = ({ open, entries }) => {
+const Drawer: FunctionComponent<Props> = ({
+  open,
+  entries,
+  anchor = 'left',
+  header,
+}) => {
   const classes = useStyles()
-  const theme = useTheme()
   return (
-    <D
+    <Draw
       variant='permanent'
       className={clsx(classes.drawer, {
         [classes.drawerOpen]: open,
@@ -74,7 +97,24 @@ const Drawer: FunctionComponent<Props> = ({ open, entries }) => {
           [classes.drawerClose]: !open,
         }),
       }}
-    ></D>
+      anchor={anchor}
+    >
+      <div className={classes.toolbar}>
+        {header.icon && (
+          <Icon className={classes.headerIcon}>{header.icon}</Icon>
+        )}
+        <Typography variant='h6'>{header.name}</Typography>
+      </div>
+      <Divider />
+      {entries.map((entry: Entries, i: number) => (
+        <List>
+          <ListItem button key={i} onClick={entry.action}>
+            <ListItemIcon>{entry.icon}</ListItemIcon>
+            <ListItemText primary={entry.name}></ListItemText>
+          </ListItem>
+        </List>
+      ))}
+    </Draw>
   )
 }
 
