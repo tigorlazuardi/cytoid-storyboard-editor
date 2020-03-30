@@ -1,10 +1,9 @@
-import { Remote } from 'electron'
+import { remote } from 'electron'
 import yaml from 'js-yaml'
-import * as fs from 'fs'
 import Result from './models/result_handling'
 
 const loadLocation = './config.yaml'
-const defaultLocation = './default_config.yaml'
+const fs = remote.require('fs')
 
 interface Variable {
   HideBarOnScroll: boolean
@@ -35,31 +34,34 @@ class Config {
       HideBarOnScroll: true,
     }
   }
-  load(): Result<boolean, string> {
+  public init(): Result<boolean, string[]> {
     try {
       const doc: Variable = yaml.safeLoad(
         fs.readFileSync(loadLocation, 'utf-8')
       )
-      for (const k in Object.keys(validationSchema)) {
-        validationSchema[k](doc[k]).when({
-          ok: (value: any) => (this.env[k] = value),
-          fail: (err: string) => console.log(err),
-        })
-      }
-      this.env = doc
-      return Result.Ok(true)
+      const errors = this.validate(doc)
+      return errors.length > 0 ? Result.Ok(true) : Result.Err(errors)
     } catch {
       const z = yaml.safeDump(this.env, { sortKeys: true })
       fs.writeFileSync(loadLocation, z)
-      return Result.Err('Loaded default config')
+      return Result.Err(['No config found. Using default config'])
     }
   }
+  public changeConfig(config: Variable): Result<boolean, string[]> {
+    const errors = this.validate(config)
+    return errors.length > 0 ? Result.Ok(true) : Result.Err(errors)
+  }
+  private validate(env: Variable): string[] {
+    const errors: string[] = []
+    for (const k in Object.keys(validationSchema)) {
+      validationSchema[k](env[k]).when({
+        ok: (value: any) => (this.env[k] = value),
+        fail: (err: string) => errors.push(err),
+      })
+    }
+    return errors
+  }
 }
-
-const remote: Remote = window.require('electron').remote
-console.log(remote)
-// const fs = remote.require('fs')
-//
 
 const config = new Config()
 
