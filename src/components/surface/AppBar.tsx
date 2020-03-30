@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, Dispatch, SetStateAction } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Bar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -22,10 +22,11 @@ const useStyles = makeStyles((theme) => ({
 
 type Props = {
   name: string
+  setOpen: Dispatch<SetStateAction<boolean>>
   open: boolean
 }
 
-const AppBar: FunctionComponent<Props> = ({ name, open }) => {
+const AppBar: FunctionComponent<Props> = ({ name, open, setOpen }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
@@ -37,7 +38,7 @@ const AppBar: FunctionComponent<Props> = ({ name, open }) => {
               className={classes.menuButton}
               color='inherit'
               aira-label='menu'
-              onClick={() => (open = !open)}
+              onClick={() => setOpen(!open)}
             >
               <Menu />
             </IconButton>

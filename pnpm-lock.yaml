@@ -20,7 +20,6 @@ dependencies:
 devDependencies:
   '@types/js-yaml': 3.12.3
   '@types/react-router-dom': 5.1.3
-  babel-plugin-transform-imports: 2.0.0
   concurrently: 5.1.0
   electron: 8.2.0
   electron-builder: 22.4.1
@@ -252,6 +251,7 @@ packages:
     resolution:
       integrity: sha512-3x3yOeyBhW851hroze7ElzdkeRXQYQbFIb7gLK1WQYsw2GWDay5gAJNw1sWJ0VFP6z5J1whqeXH/WCdCjZv6dA==
   /@babel/helper-validator-identifier/7.9.0:
+    dev: false
     resolution:
       integrity: sha512-6G8bQKjOh+of4PV/ThDm/rRqlU7+IGoJuofpagU5GlEl29Vv0RGqqt86ZGRV8ZuSOY3o+8yXl5y782SMcG7SHw==
   /@babel/helper-wrap-function/7.8.3:
@@ -1082,6 +1082,7 @@ packages:
       '@babel/helper-validator-identifier': 7.9.0
       lodash: 4.17.15
       to-fast-properties: 2.0.0
+    dev: false
     resolution:
       integrity: sha512-BS9JKfXkzzJl8RluW4JGknzpiUV7ZrvTayM6yfqLTVBEnFtyowVIOu6rqxRd5cVO6yGoWf4T8u8dgK9oB+GCng==
   /@cnakazawa/watch/1.0.4:
@@ -2640,13 +2641,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-/WU28rzhODb/o6VFjEkDpZe7O/U=
-  /babel-plugin-transform-imports/2.0.0:
-    dependencies:
-      '@babel/types': 7.9.0
-      is-valid-path: 0.1.1
-    dev: true
-    resolution:
-      integrity: sha512-65ewumYJ85QiXdcB/jmiU0y0jg6eL6CdnDqQAqQ8JMOKh1E52VPG3NJzbVKWcgovUR5GBH8IWpCXQ7I8Q3wjgw==
   /babel-plugin-transform-object-rest-spread/6.26.0:
     dependencies:
       babel-plugin-syntax-object-rest-spread: 6.13.0
@@ -6344,12 +6338,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-arnXMxT1hhoKo9k1LZdmlNyJdDDfy2v0fXjFlmok4+i8ul/6WlbVge9bhM74OpNPQPMGUToDtz+KXa1PneJxOA==
-  /is-extglob/1.0.0:
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-rEaBd8SUNAWgkvyPKXYMb/xiBsA=
   /is-extglob/2.1.1:
     dev: false
     engines:
@@ -6380,14 +6368,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-cTIB4yPYL/Grw0EaSzASzg6bBy9gqCofvWN8okThAYIxKJZC+udlRAmGbM0XLeniEJSs8uEgHPGuHSe1XsOLSQ==
-  /is-glob/2.0.1:
-    dependencies:
-      is-extglob: 1.0.0
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-0Jb5JqPe1WAPP9/ZEZjLCIjC2GM=
   /is-glob/3.1.0:
     dependencies:
       is-extglob: 2.1.1
@@ -6417,14 +6397,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-oiEcGoQbGc+3/iijAijrK2qFpkNoNjsHOm/5V5iaeydyrS/hnwaRCEgH5cpW0P3T1lSjV5piB7S5b5lEugNLhg==
-  /is-invalid-path/0.1.0:
-    dependencies:
-      is-glob: 2.0.1
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-MHqFWzzxqTi0TqcNLGEQYFNxTzQ=
   /is-npm/4.0.0:
     dev: true
     engines:
@@ -6557,14 +6529,6 @@ packages:
   /is-typedarray/1.0.0:
     resolution:
       integrity: sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
-  /is-valid-path/0.1.1:
-    dependencies:
-      is-invalid-path: 0.1.0
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-EQ+f90w39mPh7HkV60UfLbk6yd8=
   /is-windows/1.0.2:
     dev: false
     engines:
@@ -11605,6 +11569,7 @@ packages:
     resolution:
       integrity: sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
   /to-fast-properties/2.0.0:
+    dev: false
     engines:
       node: '>=4'
     resolution:
@@ -12641,7 +12606,6 @@ specifiers:
   '@types/react': ^16.9.0
   '@types/react-dom': ^16.9.0
   '@types/react-router-dom': ^5.1.3
-  babel-plugin-transform-imports: ^2.0.0
   concurrently: ^5.1.0
   electron: ^8.2.0
   electron-builder: ^22.4.1

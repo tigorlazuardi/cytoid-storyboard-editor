@@ -1,7 +1,7 @@
-import { remote } from 'electron'
 import yaml from 'js-yaml'
 import Result from './models/result_handling'
 
+const remote = window.require('electron').remote
 const loadLocation = './config.yaml'
 const fs = remote.require('fs')
 
@@ -28,7 +28,7 @@ const validationSchema: _V = {
 }
 
 class Config {
-  public env: Variable
+  env: Variable
   constructor() {
     this.env = {
       HideBarOnScroll: true,

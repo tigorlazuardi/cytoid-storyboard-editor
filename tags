@@ -57,7 +57,6 @@ arcade_intensity	src/models/state.ts	/^  arcade_intensity?: number$/;"	p	interfa
 arcade_interference_size	src/models/state.ts	/^  arcade_interference_size?: number$/;"	p	interface:State
 arcade_interference_speed	src/models/state.ts	/^  arcade_interference_speed?: number$/;"	p	interface:State
 author	package.json	/^  "author": {$/;"	o
-babel-plugin-transform-imports	package.json	/^    "babel-plugin-transform-imports": "^2.0.0",$/;"	s	object:devDependencies
 background_color	public/manifest.json	/^  "background_color": "#ffffff"$/;"	s
 background_dim	src/models/state.ts	/^  background_dim?: number$/;"	p	interface:State
 bloom	src/models/state.ts	/^  bloom?: boolean$/;"	p	interface:State
@@ -66,6 +65,7 @@ body	src/index.css	/^body {$/;"	s
 brightness	src/models/state.ts	/^  brightness?: number$/;"	p	interface:State
 browserslist	package.json	/^  "browserslist": {$/;"	o
 build	package.json	/^    "build": "react-scripts build",$/;"	s	object:scripts
+build-starter	package.json	/^    "build-starter": "tsc src\/electron.ts --outDir public --esModuleInterop",$/;"	s	object:scripts
 changeConfig	src/config.ts	/^  public changeConfig(config: Variable): Result<boolean, string[]> {$/;"	m	class:Config
 chomatical_intensity	src/models/state.ts	/^  chomatical_intensity?: number$/;"	p	interface:State
 chromatic	src/models/state.ts	/^  chromatic?: boolean$/;"	p	interface:State
@@ -87,6 +87,8 @@ constructor	src/models/result_handling.ts	/^  constructor($/;"	m	class:Result
 constructor	src/models/sprite.ts	/^  constructor(id: number, path: string, time: string | number) {$/;"	m	class:Sprite
 contrast	src/models/state.ts	/^  contrast?: number$/;"	p	interface:State
 createWindow	public/electron.js	/^const createWindow = () => {$/;"	C
+createWindow	public/electron.ts	/^const createWindow = () => {$/;"	C
+createWindow	src/electron.ts	/^const createWindow = () => {$/;"	C
 deleteState	src/models/sprite.ts	/^  deleteState(index: number): Result<boolean, string> {$/;"	m	class:Sprite
 dependencies	package.json	/^  "dependencies": {$/;"	o
 devDependencies	package.json	/^  "devDependencies": {$/;"	o
@@ -99,9 +101,9 @@ eject	package.json	/^    "eject": "react-scripts eject",$/;"	s	object:scripts
 electron	package.json	/^    "electron": "^8.2.0",$/;"	s	object:devDependencies
 electron-builder	package.json	/^    "electron-builder": "^22.4.1",$/;"	s	object:devDependencies
 electron-is-dev	package.json	/^    "electron-is-dev": "^1.1.0",$/;"	s	object:devDependencies
-electron:dev	package.json	/^    "electron:dev": "concurrently \\"BROWSER=NONE npm start\\" \\"wait-on http:\/\/localhost:300/;"	s	object:scripts
+electron:dev	package.json	/^    "electron:dev": "npm run build-starter && concurrently \\"BROWSER=NONE npm start\\" \\"wait-/;"	s	object:scripts
 email	package.json	/^    "email": "tigor.hutasuhut@gmail.com",$/;"	s	object:author
-env	src/config.ts	/^  public env: Variable$/;"	p	class:Config
+env	src/config.ts	/^  env: Variable$/;"	p	class:Config
 error	src/models/result_handling.ts	/^    private error: TError,$/;"	p	class:Result
 errors	src/config.ts	/^      const errors = this.validate(doc)$/;"	C	method:Config.init
 errors	src/config.ts	/^    const errors = this.validate(config)$/;"	C	method:Config.changeConfig
@@ -165,6 +167,7 @@ react-dom	package.json	/^    "react-dom": "^16.13.1",$/;"	s	object:dependencies
 react-router-dom	package.json	/^    "react-router-dom": "^5.1.2",$/;"	s	object:dependencies
 react-scripts	package.json	/^    "react-scripts": "3.4.1",$/;"	s	object:dependencies
 relative_time	src/models/state.ts	/^  relative_time?: number$/;"	p	interface:State
+remote	src/config.ts	/^const remote = window.require('electron').remote$/;"	C
 resolveJsonModule	tsconfig.json	/^    "resolveJsonModule": true,$/;"	b	object:compilerOptions
 root	public/index.html	/^    <div id="root"><\/div>$/;"	I
 rot_x	src/models/state.ts	/^  rot_x?: number$/;"	p	interface:State
@@ -220,6 +223,8 @@ w	public/electron.js	/^  w = new BrowserWindow({ minWidth: 600, minHeight: 480 }
 w	public/electron.js	/^let w$/;"	v
 wait-on	package.json	/^    "wait-on": "^4.0.1"$/;"	s	object:devDependencies
 when	src/models/result_handling.ts	/^  when<T, E>(mapFns: MapFns<TSuccess, TError, T, E>) {$/;"	m	class:Result
+win	public/electron.ts	/^let win: BrowserWindow = null$/;"	v
+win	src/electron.ts	/^let win: BrowserWindow | null = null$/;"	v
 x	src/models/state.ts	/^  x?: number$/;"	p	interface:State
 y	src/models/state.ts	/^  y?: number$/;"	p	interface:State
 z	src/config.ts	/^      const z = yaml.safeDump(this.env, { sortKeys: true })$/;"	C	method:Config.init
