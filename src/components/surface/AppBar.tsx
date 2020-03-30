@@ -61,7 +61,7 @@ const AppBar: FunctionComponent<Props> = ({ name, open, setOpen }) => {
     <div className={classes.root}>
       <HideOnScroll direction='down'>
         <Bar
-          position='static'
+          position='fixed'
           className={clsx(classes.appBar, {
             [classes.appBarShift]: open,
           })}
@@ -69,9 +69,7 @@ const AppBar: FunctionComponent<Props> = ({ name, open, setOpen }) => {
           <Toolbar>
             <IconButton
               edge='start'
-              className={clsx(classes.menuButton, {
-                [classes.menuButtonShift]: !open,
-              })}
+              className={classes.menuButton}
               color='inherit'
               aira-label='menu'
               onClick={() => setOpen(!open)}
