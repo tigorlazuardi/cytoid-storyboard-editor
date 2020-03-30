@@ -7,6 +7,9 @@ import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/icons/Menu'
 import Settings from '@material-ui/icons/Settings'
 import HideOnScroll from './HideOnScroll'
+import clsx from 'clsx'
+
+const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,9 +17,35 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  menuButtonShift: {
+    marginLeft: theme.spacing(7),
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   title: {
     flexGrow: 1,
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
   },
 }))
 
@@ -31,11 +60,18 @@ const AppBar: FunctionComponent<Props> = ({ name, open, setOpen }) => {
   return (
     <div className={classes.root}>
       <HideOnScroll direction='down'>
-        <Bar position='static'>
+        <Bar
+          position='static'
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
           <Toolbar>
             <IconButton
               edge='start'
-              className={classes.menuButton}
+              className={clsx(classes.menuButton, {
+                [classes.menuButtonShift]: !open,
+              })}
               color='inherit'
               aira-label='menu'
               onClick={() => setOpen(!open)}

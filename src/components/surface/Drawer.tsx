@@ -2,6 +2,7 @@ import React, { FunctionComponent, ReactNode } from 'react'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import D from '@material-ui/core/Drawer'
 import Mail from '@material-ui/icons/Mail'
+import clsx from 'clsx'
 
 const drawerWidth = 240
 
@@ -53,9 +54,19 @@ const Drawer: FunctionComponent<Props> = ({ open, entries }) => {
   const classes = useStyles()
   const theme = useTheme()
   return (
-    <div className={classes.root}>
-      <Mail />
-    </div>
+    <D
+      variant='permanent'
+      className={clsx(classes.drawer, {
+        [classes.drawerOpen]: open,
+        [classes.drawerClose]: !open,
+      })}
+      classes={{
+        paper: clsx({
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open,
+        }),
+      }}
+    ></D>
   )
 }
 

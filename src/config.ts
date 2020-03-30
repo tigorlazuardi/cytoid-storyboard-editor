@@ -1,20 +1,19 @@
 import yaml from 'js-yaml'
 import Result from './models/result_handling'
+import * as fs from 'fs'
 
-const remote = window.require('electron').remote
 const loadLocation = './config.yaml'
-const fs = remote.require('fs')
 
 interface Variable {
   HideBarOnScroll: boolean
   [key: string]: any
 }
 
-interface _V {
+interface Validate {
   [key: string]: (value: any) => Result<any, string>
 }
 
-const validationSchema: _V = {
+const validationSchema: Validate = {
   HideBarOnScroll(value: any): Result<any, string> {
     switch (typeof value) {
       case 'boolean':
