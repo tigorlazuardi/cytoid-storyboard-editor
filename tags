@@ -9,29 +9,30 @@
 0	package.json	/^      ">0.2%",$/;"	s	array:browserslist.production
 0	package.json	/^      "last 1 chrome version",$/;"	s	array:browserslist.development
 0	public/manifest.json	/^    {$/;"	o	array:icons
-0	tsconfig.json	/^      "dom",$/;"	s	array:compilerOptions.lib
-0	tsconfig.json	/^    "src"$/;"	s	array:include
+0	tsconfig.json	/^    "lib": ["dom", "dom.iterable", "esnext"],$/;"	s	array:compilerOptions.lib
+0	tsconfig.json	/^  "include": ["src"]$/;"	s	array:include
 1	package.json	/^      "last 1 firefox version",$/;"	s	array:browserslist.development
 1	package.json	/^      "not dead",$/;"	s	array:browserslist.production
 1	public/manifest.json	/^    {$/;"	o	array:icons
-1	tsconfig.json	/^      "dom.iterable",$/;"	s	array:compilerOptions.lib
+1	tsconfig.json	/^    "lib": ["dom", "dom.iterable", "esnext"],$/;"	s	array:compilerOptions.lib
 2	package.json	/^      "last 1 safari version"$/;"	s	array:browserslist.development
 2	package.json	/^      "not op_mini all"$/;"	s	array:browserslist.production
 2	public/manifest.json	/^    {$/;"	o	array:icons
-2	tsconfig.json	/^      "esnext"$/;"	s	array:compilerOptions.lib
+2	tsconfig.json	/^    "lib": ["dom", "dom.iterable", "esnext"],$/;"	s	array:compilerOptions.lib
 @material-ui/core	package.json	/^    "@material-ui\/core": "^4.9.7",$/;"	s	object:dependencies
 @material-ui/icons	package.json	/^    "@material-ui\/icons": "^4.9.1",$/;"	s	object:dependencies
 @testing-library/jest-dom	package.json	/^    "@testing-library\/jest-dom": "^4.2.4",$/;"	s	object:dependencies
 @testing-library/react	package.json	/^    "@testing-library\/react": "^9.3.2",$/;"	s	object:dependencies
 @testing-library/user-event	package.json	/^    "@testing-library\/user-event": "^7.1.2",$/;"	s	object:dependencies
 @types/jest	package.json	/^    "@types\/jest": "^24.0.0",$/;"	s	object:dependencies
-@types/node	package.json	/^    "@types\/node": "^12.0.0",$/;"	s	object:dependencies
 @types/react	package.json	/^    "@types\/react": "^16.9.0",$/;"	s	object:dependencies
 @types/react-dom	package.json	/^    "@types\/react-dom": "^16.9.0",$/;"	s	object:dependencies
 @types/react-router-dom	package.json	/^    "@types\/react-router-dom": "^5.1.3",$/;"	s	object:devDependencies
 ArcadeContrast	src/models/state.ts	/^  ArcadeContrast?: number$/;"	p	interface:State
 Available Scripts	README.md	/^## Available Scripts$/;"	s
+Config	src/config.ts	/^class Config {$/;"	c
 Err	src/models/result_handling.ts	/^  public static Err<T>(error: T) {$/;"	m	class:Result
+HideBarOnScroll	src/config.ts	/^  HideBarOnScroll: boolean$/;"	p	interface:Variable
 Learn More	README.md	/^## Learn More$/;"	s
 MapFns	src/models/result_handling.ts	/^interface MapFns<T, E, TResult, EResult> {$/;"	i
 NoteFillColor	src/models/state.ts	/^  NoteFillColor?: string[]$/;"	p	interface:State
@@ -40,6 +41,8 @@ Result	src/models/result_handling.ts	/^export default class Result<TSuccess, TEr
 Sprite	src/models/sprite.ts	/^export default class Sprite {$/;"	c
 State	src/models/state.ts	/^export default interface State {$/;"	i
 Tape	src/models/state.ts	/^  Tape?: boolean$/;"	p	interface:State
+Variable	src/config.ts	/^interface Variable {$/;"	i
+_V	src/config.ts	/^interface _V {$/;"	i
 `yarn build`	README.md	/^### `yarn build`$/;"	S
 `yarn eject`	README.md	/^### `yarn eject`$/;"	S
 `yarn start`	README.md	/^### `yarn start`$/;"	S
@@ -53,6 +56,7 @@ arcade_intensity	src/models/state.ts	/^  arcade_intensity?: number$/;"	p	interfa
 arcade_interference_size	src/models/state.ts	/^  arcade_interference_size?: number$/;"	p	interface:State
 arcade_interference_speed	src/models/state.ts	/^  arcade_interference_speed?: number$/;"	p	interface:State
 author	package.json	/^  "author": {$/;"	o
+babel-plugin-transform-imports	package.json	/^    "babel-plugin-transform-imports": "^2.0.0",$/;"	s	object:devDependencies
 background_color	public/manifest.json	/^  "background_color": "#ffffff"$/;"	s
 background_dim	src/models/state.ts	/^  background_dim?: number$/;"	p	interface:State
 bloom	src/models/state.ts	/^  bloom?: boolean$/;"	p	interface:State
@@ -60,7 +64,7 @@ bloom_intensity	src/models/state.ts	/^  bloom_intensity?: number$/;"	p	interface
 body	src/index.css	/^body {$/;"	s
 brightness	src/models/state.ts	/^  brightness?: number$/;"	p	interface:State
 browserslist	package.json	/^  "browserslist": {$/;"	o
-build	package.json	/^    "build": "react-scripts build",$/;"	s	object:scripts
+build	package.json	/^    "build": "react-app-rewired build",$/;"	s	object:scripts
 chomatical_intensity	src/models/state.ts	/^  chomatical_intensity?: number$/;"	p	interface:State
 chromatic	src/models/state.ts	/^  chromatic?: boolean$/;"	p	interface:State
 chromatic_end	src/models/state.ts	/^  chromatic_end?: number$/;"	p	interface:State
@@ -75,15 +79,20 @@ color_filter	src/models/state.ts	/^  color_filter?: boolean$/;"	p	interface:Stat
 color_filter_color	src/models/state.ts	/^  color_filter_color?: string$/;"	p	interface:State
 compilerOptions	tsconfig.json	/^  "compilerOptions": {$/;"	o
 concurrently	package.json	/^    "concurrently": "^5.1.0",$/;"	s	object:devDependencies
+config	src/config.ts	/^const config = new Config()$/;"	C
+constructor	src/config.ts	/^  constructor() {$/;"	m	class:Config
 constructor	src/models/result_handling.ts	/^  constructor($/;"	m	class:Result
 constructor	src/models/sprite.ts	/^  constructor(id: number, path: string, time: string | number) {$/;"	m	class:Sprite
 contrast	src/models/state.ts	/^  contrast?: number$/;"	p	interface:State
 createWindow	public/electron.js	/^const createWindow = () => {$/;"	C
+customize-cra	package.json	/^    "customize-cra": "^0.9.1",$/;"	s	object:devDependencies
+defaultLocation	src/config.ts	/^const defaultLocation = '.\/default_config.yaml'$/;"	C
 deleteState	src/models/sprite.ts	/^  deleteState(index: number): Result<boolean, string> {$/;"	m	class:Sprite
 dependencies	package.json	/^  "dependencies": {$/;"	o
 devDependencies	package.json	/^  "devDependencies": {$/;"	o
 development	package.json	/^    "development": [$/;"	a	object:browserslist
 display	public/manifest.json	/^  "display": "standalone",$/;"	s
+doc	src/config.ts	/^      const doc: Variable = yaml.safeLoad($/;"	C	method:Config.load
 dream	src/models/state.ts	/^  dream?: boolean$/;"	p	interface:State
 dream_intensity	src/models/state.ts	/^  dream_intensity?: number$/;"	p	interface:State
 eject	package.json	/^    "eject": "react-scripts eject",$/;"	s	object:scripts
@@ -92,6 +101,7 @@ electron-builder	package.json	/^    "electron-builder": "^22.4.1",$/;"	s	object:
 electron-is-dev	package.json	/^    "electron-is-dev": "^1.1.0",$/;"	s	object:devDependencies
 electron:dev	package.json	/^    "electron:dev": "concurrently \\"BROWSER=NONE npm start\\" \\"wait-on http:\/\/localhost:300/;"	s	object:scripts
 email	package.json	/^    "email": "tigor.hutasuhut@gmail.com",$/;"	s	object:author
+env	src/config.ts	/^  public env: Variable$/;"	p	class:Config
 error	src/models/result_handling.ts	/^    private error: TError,$/;"	p	class:Result
 esModuleInterop	tsconfig.json	/^    "esModuleInterop": true,$/;"	b	object:compilerOptions
 eslintConfig	package.json	/^  "eslintConfig": {$/;"	o
@@ -106,20 +116,23 @@ focus_size	src/models/state.ts	/^  focus_size?: number$/;"	p	interface:State
 focus_speed	src/models/state.ts	/^  focus_speed?: number$/;"	p	interface:State
 forceConsistentCasingInFileNames	tsconfig.json	/^    "forceConsistentCasingInFileNames": true,$/;"	b	object:compilerOptions
 fov	src/models/state.ts	/^  fov?: number$/;"	p	interface:State
-fs	src/config.ts	/^const fs = window.require('fs')$/;"	C
 glitch	src/models/state.ts	/^  glitch?: boolean$/;"	p	interface:State
 glitch_intensity	src/models/state.ts	/^  glitch_intensity?: number$/;"	p	interface:State
 gray_scale	src/models/state.ts	/^  gray_scale?: boolean$/;"	p	interface:State
 gray_scale_intensity	src/models/state.ts	/^  gray_scale_intensity?: number$/;"	p	interface:State
 icons	public/manifest.json	/^  "icons": [$/;"	a
 id	src/models/sprite.ts	/^  public id: number$/;"	p	class:Sprite
-include	tsconfig.json	/^  "include": [$/;"	a
+include	tsconfig.json	/^  "include": ["src"]$/;"	a
 install	package.json	/^    "install": "^0.13.0",$/;"	s	object:dependencies
 isDev	public/electron.js	/^const isDev = require('electron-is-dev')$/;"	C
 isError	src/models/result_handling.ts	/^    private isError: boolean$/;"	p	class:Result
 isolatedModules	tsconfig.json	/^    "isolatedModules": true,$/;"	b	object:compilerOptions
+js-yaml	package.json	/^    "js-yaml": "^3.13.1",$/;"	s	object:dependencies
 jsx	tsconfig.json	/^    "jsx": "react"$/;"	s	object:compilerOptions
-lib	tsconfig.json	/^    "lib": [$/;"	a	object:compilerOptions
+k	src/config.ts	/^      for (const k in Object.keys(validationSchema)) {$/;"	C	method:Config.load
+lib	tsconfig.json	/^    "lib": ["dom", "dom.iterable", "esnext"],$/;"	a	object:compilerOptions
+load	src/config.ts	/^  load(): Result<boolean, string> {$/;"	m	class:Config
+loadLocation	src/config.ts	/^const loadLocation = '.\/config.yaml'$/;"	C
 main	package.json	/^  "main": "public\/electron.js",$/;"	s
 material-icons	package.json	/^    "material-icons": "^0.3.1",$/;"	s	object:dependencies
 module	tsconfig.json	/^    "module": "esnext",$/;"	s	object:compilerOptions
@@ -139,15 +152,18 @@ override_scanline_pos	src/models/state.ts	/^  override_scanline_pos?: boolean$/;
 path	public/electron.js	/^const path = require('path')$/;"	C
 path	src/models/sprite.ts	/^  public path: string$/;"	p	class:Sprite
 perspective	src/models/state.ts	/^  perspective?: boolean$/;"	p	interface:State
+plugins	.babelrc.js	/^const plugins = [$/;"	C
 private	package.json	/^  "private": true,$/;"	b
 production	package.json	/^    "production": [$/;"	a	object:browserslist
 radial_blur	src/models/state.ts	/^  radial_blur?: boolean$/;"	p	interface:State
 radial_blur_intensity	src/models/state.ts	/^  radial_blur_intensity?: number$/;"	p	interface:State
 react	package.json	/^    "react": "^16.13.1",$/;"	s	object:dependencies
+react-app-rewired	package.json	/^    "react-app-rewired": "^2.1.5",$/;"	s	object:devDependencies
 react-dom	package.json	/^    "react-dom": "^16.13.1",$/;"	s	object:dependencies
 react-router-dom	package.json	/^    "react-router-dom": "^5.1.2",$/;"	s	object:dependencies
 react-scripts	package.json	/^    "react-scripts": "3.4.1",$/;"	s	object:dependencies
 relative_time	src/models/state.ts	/^  relative_time?: number$/;"	p	interface:State
+remote	src/config.ts	/^const remote: Remote = window.require('electron').remote$/;"	C
 resolveJsonModule	tsconfig.json	/^    "resolveJsonModule": true,$/;"	b	object:compilerOptions
 root	public/index.html	/^    <div id="root"><\/div>$/;"	I
 rot_x	src/models/state.ts	/^  rot_x?: number$/;"	p	interface:State
@@ -171,7 +187,7 @@ skipLibCheck	tsconfig.json	/^    "skipLibCheck": true,$/;"	b	object:compilerOpti
 src	public/manifest.json	/^      "src": "favicon.ico",$/;"	s	object:icons.0
 src	public/manifest.json	/^      "src": "logo192.png",$/;"	s	object:icons.1
 src	public/manifest.json	/^      "src": "logo512.png",$/;"	s	object:icons.2
-start	package.json	/^    "start": "react-scripts start",$/;"	s	object:scripts
+start	package.json	/^    "start": "react-app-rewired start",$/;"	s	object:scripts
 start_url	public/manifest.json	/^  "start_url": ".",$/;"	s
 state	src/models/sprite.ts	/^  public state: State[]$/;"	p	class:Sprite
 storyboard_opacity	src/models/state.ts	/^  storyboard_opacity?: number$/;"	p	interface:State
@@ -179,7 +195,7 @@ strict	tsconfig.json	/^    "strict": true,$/;"	b	object:compilerOptions
 success	src/models/result_handling.ts	/^    private success: TSuccess,$/;"	p	class:Result
 target	tsconfig.json	/^    "target": "es5",$/;"	s	object:compilerOptions
 template	src/models/state.ts	/^  template?: string$/;"	p	interface:State
-test	package.json	/^    "test": "react-scripts test",$/;"	s	object:scripts
+test	package.json	/^    "test": "react-app-rewired test",$/;"	s	object:scripts
 theme_color	public/manifest.json	/^  "theme_color": "#000000",$/;"	s
 time	src/models/sprite.ts	/^  public time: string | number$/;"	p	class:Sprite
 time	src/models/state.ts	/^  time?: string$/;"	p	interface:State
@@ -191,6 +207,7 @@ typescript	package.json	/^    "typescript": "~3.7.2"$/;"	s	object:dependencies
 ui_opacity	src/models/state.ts	/^  ui_opacity?: number$/;"	p	interface:State
 updateState	src/models/sprite.ts	/^  updateState(index: number, state: State): Result<boolean, string> {$/;"	m	class:Sprite
 url	package.json	/^    "url": "https:\/\/www.github.com\/TigorLazuardi"$/;"	s	object:author
+validationSchema	src/config.ts	/^const validationSchema: _V = {$/;"	C
 version	package.json	/^  "version": "0.1.0",$/;"	s
 vignette	src/models/state.ts	/^  vignette?: boolean$/;"	p	interface:State
 vignette_color	src/models/state.ts	/^  vignette_color?: string$/;"	p	interface:State
@@ -203,3 +220,4 @@ wait-on	package.json	/^    "wait-on": "^4.0.1"$/;"	s	object:devDependencies
 when	src/models/result_handling.ts	/^  when<T, E>(mapFns: MapFns<TSuccess, TError, T, E>) {$/;"	m	class:Result
 x	src/models/state.ts	/^  x?: number$/;"	p	interface:State
 y	src/models/state.ts	/^  y?: number$/;"	p	interface:State
+z	src/config.ts	/^      const z = yaml.safeDump(this.env, { sortKeys: true })$/;"	C	method:Config.load
