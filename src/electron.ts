@@ -1,6 +1,9 @@
 import { app, BrowserWindow } from 'electron'
 import path from 'path'
 import isDev from 'electron-is-dev'
+import installExtension, {
+  REACT_DEVELOPER_TOOLS,
+} from 'electron-devtools-installer'
 
 let win: BrowserWindow | null = null
 
@@ -23,7 +26,8 @@ const createWindow = () => {
 
 app.on('ready', createWindow)
 
+app.on('ready', () => isDev && installExtension(REACT_DEVELOPER_TOOLS))
+
 app.on('window-all-closed', () => process.platform !== 'darwin' && app.quit())
 
 app.on('activate', () => win === null && createWindow())
-

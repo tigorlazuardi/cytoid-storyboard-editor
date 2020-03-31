@@ -94,6 +94,7 @@ devDependencies	package.json	/^  "devDependencies": {$/;"	o
 development	package.json	/^    "development": [$/;"	a	object:browserslist
 display	public/manifest.json	/^  "display": "standalone",$/;"	s
 doc	src/config.ts	/^      const doc: Variable = yaml.safeLoad($/;"	C	method:Config.init
+drawerEntries	src/components/surface/drawer_entries.ts	/^const drawerEntries: Entries[] = [$/;"	C
 dream	src/models/state.ts	/^  dream?: boolean$/;"	p	interface:State
 dream_intensity	src/models/state.ts	/^  dream_intensity?: number$/;"	p	interface:State
 eject	package.json	/^    "eject": "react-scripts eject",$/;"	s	object:scripts

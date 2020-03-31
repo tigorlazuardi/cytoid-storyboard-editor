@@ -19,11 +19,13 @@ dependencies:
   typeface-roboto: 0.0.75
   typescript: 3.7.5
 devDependencies:
+  '@types/electron-devtools-installer': 2.2.0
   '@types/js-yaml': 3.12.3
   '@types/react-router-dom': 5.1.3
   concurrently: 5.1.0
   electron: 8.2.0
   electron-builder: 22.4.1
+  electron-devtools-installer: 2.2.4
   electron-is-dev: 1.1.0
   wait-on: 4.0.1
 lockfileVersion: 5.1
@@ -32,6 +34,11 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GLyWIFBbGvpKPGo55JyRZAo4lVbnBiD52cKlw/0Vt+wnmKvWJkpZvsjVoaIolyBXDeAQKSicRtqFNPem9w0WYA==
+  /7zip/0.0.6:
+    dev: true
+    hasBin: true
+    resolution:
+      integrity: sha1-nK+xca+CMpSQNTtIFvAzR6oVCjA=
   /@babel/code-frame/7.8.3:
     dependencies:
       '@babel/highlight': 7.9.0
@@ -1732,6 +1739,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Q1y515GcOdTHgagaVFhHnIFQ38ygs/kmxdNpvpou+raI9UO3YZcHDngBSYKQklcKlvA7iuQlmIKbzvmxcOE9CQ==
+  /@types/electron-devtools-installer/2.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-HJNxpaOXuykCK4rQ6FOMxAA0NLFYsf7FiPFGmab0iQmtVBHSAfxzy3MRFpLTTDDWbV0yD2YsHOQvdu8yCqtCfw==
   /@types/eslint-visitor-keys/1.0.0:
     dev: false
     resolution:
@@ -3701,6 +3712,10 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-u7v4o84SwFpD32Z8IIcPZ6z1/ie24O6RU3RbtL5Y316l3KuHVPx9ItBgWQ6VlfAFnRnTtMUrsQ9MUUTuEZjogg==
+  /cross-unzip/0.0.2:
+    dev: true
+    resolution:
+      integrity: sha1-UYO8R6CVWb78+YzEZXlkmZNZNy8=
   /crypto-browserify/3.12.0:
     dependencies:
       browserify-cipher: 1.0.1
@@ -4379,6 +4394,15 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-13CjZcGeJS+c3EKRwFT/Oty5Niif5g1FwDioBLEbjkPCPQgxdtDsr+rJtCu9qxkiKDYpAoPS+t/clNk0efONvQ==
+  /electron-devtools-installer/2.2.4:
+    dependencies:
+      7zip: 0.0.6
+      cross-unzip: 0.0.2
+      rimraf: 2.7.1
+      semver: 5.7.1
+    dev: true
+    resolution:
+      integrity: sha512-b5kcM3hmUqn64+RUcHjjr8ZMpHS2WJ5YO0pnG9+P/RTdx46of/JrEjuciHWux6pE+On6ynWhHJF53j/EDJN0PA==
   /electron-is-dev/1.1.0:
     dev: true
     resolution:
@@ -5382,7 +5406,6 @@ packages:
     resolution:
       integrity: sha1-tH31NJPvkR33VzHnCp3tAYnbQMk=
   /fs.realpath/1.0.0:
-    dev: false
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
   /fsevents/1.2.12:
@@ -5489,7 +5512,6 @@ packages:
       minimatch: 3.0.4
       once: 1.4.0
       path-is-absolute: 1.0.1
-    dev: false
     resolution:
       integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   /global-agent/2.1.8:
@@ -6077,7 +6099,6 @@ packages:
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
-    dev: false
     resolution:
       integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=
   /inherits/2.0.1:
@@ -8710,7 +8731,6 @@ packages:
     resolution:
       integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==
   /path-is-absolute/1.0.1:
-    dev: false
     engines:
       node: '>=0.10.0'
     resolution:
@@ -10511,7 +10531,6 @@ packages:
   /rimraf/2.7.1:
     dependencies:
       glob: 7.1.6
-    dev: false
     hasBin: true
     resolution:
       integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
@@ -12602,6 +12621,7 @@ specifiers:
   '@testing-library/jest-dom': ^4.2.4
   '@testing-library/react': ^9.3.2
   '@testing-library/user-event': ^7.1.2
+  '@types/electron-devtools-installer': ^2.2.0
   '@types/jest': ^24.0.0
   '@types/js-yaml': ^3.12.3
   '@types/react': ^16.9.0
@@ -12611,6 +12631,7 @@ specifiers:
   concurrently: ^5.1.0
   electron: ^8.2.0
   electron-builder: ^22.4.1
+  electron-devtools-installer: ^2.2.4
   electron-is-dev: ^1.1.0
   install: ^0.13.0
   js-yaml: ^3.13.1

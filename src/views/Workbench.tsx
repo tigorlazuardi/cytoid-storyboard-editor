@@ -3,6 +3,7 @@ import AppBar from '../components/surface/AppBar'
 import Drawer from '../components/surface/Drawer'
 import Config from '../config'
 import Build from '@material-ui/icons/Build'
+import drawerEntries from '../components/surface/drawer_entries'
 
 function Workbench() {
   const [open, setOpen] = useState(Config.env.HideBarOnScroll)
@@ -11,11 +12,12 @@ function Workbench() {
       <AppBar open={open} setOpen={setOpen} name='Workbench' />
       <Drawer
         open={open}
-        entries={[]}
+        entries={drawerEntries}
         header={{
           name: 'Toolbox',
           icon: <Build />,
         }}
+        setOpen={setOpen}
       />
     </Fragment>
   )

@@ -1,8 +1,12 @@
 import React, {
   FunctionComponent,
   ReactNode,
-  MouseEvent,
   ReactElement,
+  MouseEvent,
+  Fragment,
+  Dispatch,
+  SetStateAction,
+  useState,
 } from 'react'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Draw from '@material-ui/core/Drawer'
@@ -14,6 +18,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
+import Add from '@material-ui/icons/Add'
 
 const drawerWidth = 240
 
@@ -25,6 +30,7 @@ interface Props {
     name: string
     icon?: ReactNode
   }
+  setOpen: Dispatch<SetStateAction<boolean>>
 }
 
 export type Entries = {
@@ -75,6 +81,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   headerIcon: {
     paddingRight: theme.spacing(1),
   },
+  addIcon: {
+    marginRight: theme.spacing(-3),
+  },
+  entryIcon: {
+    marginLeft: theme.spacing(1),
+  },
 }))
 
 const Drawer: FunctionComponent<Props> = ({
@@ -82,8 +94,16 @@ const Drawer: FunctionComponent<Props> = ({
   entries,
   anchor = 'left',
   header,
+  setOpen,
 }) => {
   const classes = useStyles()
+  let customStyle: object
+  const [hover, setHover] = useState(false)
+  if (hover) {
+    customStyle = { cursor: 'pointer', userSelect: 'none' }
+  } else {
+    customStyle = { cursor: 'default', userSelect: 'none' }
+  }
   return (
     <Draw
       variant='permanent'
@@ -99,7 +119,13 @@ const Drawer: FunctionComponent<Props> = ({
       }}
       anchor={anchor}
     >
-      <div className={classes.toolbar}>
+      <div
+        className={classes.toolbar}
+        style={customStyle}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onClick={() => setOpen(false)}
+      >
         {header.icon && (
           <Icon className={classes.headerIcon}>{header.icon}</Icon>
         )}
@@ -107,12 +133,20 @@ const Drawer: FunctionComponent<Props> = ({
       </div>
       <Divider />
       {entries.map((entry: Entries, i: number) => (
-        <List>
-          <ListItem button key={i} onClick={entry.action}>
-            <ListItemIcon>{entry.icon}</ListItemIcon>
-            <ListItemText primary={entry.name}></ListItemText>
-          </ListItem>
-        </List>
+        <Fragment key={i}>
+          <List>
+            <ListItem button onClick={entry.action}>
+              <ListItemIcon className={classes.entryIcon}>
+                {entry.icon}
+              </ListItemIcon>
+              <ListItemIcon className={classes.addIcon}>
+                <Add />
+              </ListItemIcon>
+              <ListItemText primary={entry.name}></ListItemText>
+            </ListItem>
+          </List>
+          <Divider />
+        </Fragment>
       ))}
     </Draw>
   )
