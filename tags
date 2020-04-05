@@ -31,24 +31,21 @@
 @types/react-dom	package.json	/^    "@types\/react-dom": "^16.9.0",$/;"	s	object:dependencies
 @types/react-router-dom	package.json	/^    "@types\/react-router-dom": "^5.1.3",$/;"	s	object:devDependencies
 ArcadeContrast	src/models/state.ts	/^  ArcadeContrast?: number$/;"	p	interface:State
-Available Scripts	README.md	/^## Available Scripts$/;"	s
 Config	src/config.ts	/^class Config {$/;"	c
+Cytoid Storyboard Editor	README.md	/^# Cytoid Storyboard Editor$/;"	c
+Developer Notes	README.md	/^# Developer Notes$/;"	c
 Err	src/models/result_handling.ts	/^  public static Err<T>(error: T) {$/;"	m	class:Result
 HideBarOnScroll	src/config.ts	/^  HideBarOnScroll: boolean$/;"	p	interface:Variable
-Learn More	README.md	/^## Learn More$/;"	s
 MapFns	src/models/result_handling.ts	/^interface MapFns<T, E, TResult, EResult> {$/;"	i
 NoteFillColor	src/models/state.ts	/^  NoteFillColor?: string[]$/;"	p	interface:State
 Ok	src/models/result_handling.ts	/^  public static Ok<T>(success: T) {$/;"	m	class:Result
 Result	src/models/result_handling.ts	/^export default class Result<TSuccess, TError> {$/;"	c
+Running in Development	README.md	/^### Running in Development$/;"	S
 Sprite	src/models/sprite.ts	/^export default class Sprite {$/;"	c
 State	src/models/state.ts	/^export default interface State {$/;"	i
 Tape	src/models/state.ts	/^  Tape?: boolean$/;"	p	interface:State
 Validate	src/config.ts	/^interface Validate {$/;"	i
 Variable	src/config.ts	/^interface Variable {$/;"	i
-`yarn build`	README.md	/^### `yarn build`$/;"	S
-`yarn eject`	README.md	/^### `yarn eject`$/;"	S
-`yarn start`	README.md	/^### `yarn start`$/;"	S
-`yarn test`	README.md	/^### `yarn test`$/;"	S
 addNewState	src/models/sprite.ts	/^  addNewState(state: State) {$/;"	m	class:Sprite
 add_time	src/models/state.ts	/^  add_time?: number$/;"	p	interface:State
 allowJs	tsconfig.json	/^    "allowJs": true,$/;"	b	object:compilerOptions
