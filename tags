@@ -24,6 +24,7 @@
 @testing-library/jest-dom	package.json	/^    "@testing-library\/jest-dom": "^4.2.4",$/;"	s	object:dependencies
 @testing-library/react	package.json	/^    "@testing-library\/react": "^9.3.2",$/;"	s	object:dependencies
 @testing-library/user-event	package.json	/^    "@testing-library\/user-event": "^7.1.2",$/;"	s	object:dependencies
+@types/electron-devtools-installer	package.json	/^    "@types\/electron-devtools-installer": "^2.2.0",$/;"	s	object:devDependencies
 @types/jest	package.json	/^    "@types\/jest": "^24.0.0",$/;"	s	object:dependencies
 @types/js-yaml	package.json	/^    "@types\/js-yaml": "^3.12.3",$/;"	s	object:devDependencies
 @types/react	package.json	/^    "@types\/react": "^16.9.0",$/;"	s	object:dependencies
@@ -100,6 +101,7 @@ dream_intensity	src/models/state.ts	/^  dream_intensity?: number$/;"	p	interface
 eject	package.json	/^    "eject": "react-scripts eject",$/;"	s	object:scripts
 electron	package.json	/^    "electron": "^8.2.0",$/;"	s	object:devDependencies
 electron-builder	package.json	/^    "electron-builder": "^22.4.1",$/;"	s	object:devDependencies
+electron-devtools-installer	package.json	/^    "electron-devtools-installer": "^2.2.4",$/;"	s	object:devDependencies
 electron-is-dev	package.json	/^    "electron-is-dev": "^1.1.0",$/;"	s	object:devDependencies
 electron:dev	package.json	/^    "electron:dev": "npm run build-starter && concurrently \\"BROWSER=NONE npm start\\" \\"wait-/;"	s	object:scripts
 email	package.json	/^    "email": "tigor.hutasuhut@gmail.com",$/;"	s	object:author

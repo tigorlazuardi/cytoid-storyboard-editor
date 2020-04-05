@@ -25,7 +25,7 @@ const drawerWidth = 240
 interface Props {
   open: boolean
   entries: Entries[]
-  anchor?: 'left' | 'right'
+  anchor?: 'left' | 'right' | 'top' | 'bottom' | undefined
   header: {
     name: string
     icon?: ReactNode
@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    overflowX: 'hidden',
   },
   drawerClose: {
     transition: theme.transitions.create('width', {

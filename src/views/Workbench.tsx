@@ -4,6 +4,7 @@ import Drawer from '../components/surface/Drawer'
 import Config from '../config'
 import Build from '@material-ui/icons/Build'
 import drawerEntries from '../components/surface/drawer_entries'
+import WorkArea from '../components/surface/WorkArea'
 
 function Workbench() {
   const [open, setOpen] = useState(Config.env.HideBarOnScroll)
@@ -19,6 +20,7 @@ function Workbench() {
         }}
         setOpen={setOpen}
       />
+      <WorkArea open={open} />
     </Fragment>
   )
 }
