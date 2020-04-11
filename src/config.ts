@@ -17,9 +17,9 @@ const validationSchema: Validate = {
   HideBarOnScroll(value: any): Result<any, string> {
     switch (typeof value) {
       case 'boolean':
-        return Result.Ok(value)
+        return Result.ok(value)
       default:
-        return Result.Err(
+        return Result.err(
           `'HideBarOnScroll' key wants value 'boolean', but get ${typeof value} instead`
         )
     }
@@ -39,23 +39,23 @@ class Config {
         fs.readFileSync(loadLocation, 'utf-8')
       )
       const errors = this.validate(doc)
-      return errors.length > 0 ? Result.Ok(true) : Result.Err(errors)
+      return errors.length > 0 ? Result.ok(true) : Result.err(errors)
     } catch {
       const z = yaml.safeDump(this.env, { sortKeys: true })
       fs.writeFileSync(loadLocation, z)
-      return Result.Err(['No config found. Using default config'])
+      return Result.err(['No config found. Using default config'])
     }
   }
   public changeConfig(config: Variable): Result<boolean, string[]> {
     const errors = this.validate(config)
-    return errors.length > 0 ? Result.Ok(true) : Result.Err(errors)
+    return errors.length > 0 ? Result.ok(true) : Result.err(errors)
   }
   private validate(env: Variable): string[] {
     const errors: string[] = []
     for (const k in Object.keys(validationSchema)) {
       validationSchema[k](env[k]).when({
-        ok: (value: any) => (this.env[k] = value),
-        fail: (err: string) => errors.push(err),
+        Ok: (value: any) => (this.env[k] = value),
+        Err: (err: string) => errors.push(err),
       })
     }
     return errors

@@ -31,13 +31,16 @@
 @types/react-dom	package.json	/^    "@types\/react-dom": "^16.9.0",$/;"	s	object:dependencies
 @types/react-router-dom	package.json	/^    "@types\/react-router-dom": "^5.1.3",$/;"	s	object:devDependencies
 ArcadeContrast	src/models/state.ts	/^  ArcadeContrast?: number$/;"	p	interface:State
+AsyncWhen	src/models/result_handling.ts	/^  public static AsyncWhen = <T, E, TResult, TError>($/;"	p	class:Result
 Config	src/config.ts	/^class Config {$/;"	c
 Cytoid Storyboard Editor	README.md	/^# Cytoid Storyboard Editor$/;"	c
 Developer Notes	README.md	/^# Developer Notes$/;"	c
+Err	src/models/result_handling.ts	/^  Err: (a: E) => EResult$/;"	p	interface:MapFns
 Err	src/models/result_handling.ts	/^  public static Err<T>(error: T) {$/;"	m	class:Result
 HideBarOnScroll	src/config.ts	/^  HideBarOnScroll: boolean$/;"	p	interface:Variable
 MapFns	src/models/result_handling.ts	/^interface MapFns<T, E, TResult, EResult> {$/;"	i
 NoteFillColor	src/models/state.ts	/^  NoteFillColor?: string[]$/;"	p	interface:State
+Ok	src/models/result_handling.ts	/^  Ok: (a: T) => TResult$/;"	p	interface:MapFns
 Ok	src/models/result_handling.ts	/^  public static Ok<T>(success: T) {$/;"	m	class:Result
 Result	src/models/result_handling.ts	/^export default class Result<TSuccess, TError> {$/;"	c
 Running in Development	README.md	/^### Running in Development$/;"	S
@@ -110,7 +113,6 @@ errors	src/config.ts	/^    const errors: string[] = []$/;"	C	method:Config.valid
 esModuleInterop	tsconfig.json	/^    "esModuleInterop": true,$/;"	b	object:compilerOptions
 eslintConfig	package.json	/^  "eslintConfig": {$/;"	o
 extends	package.json	/^    "extends": "react-app"$/;"	s	object:eslintConfig
-fail	src/models/result_handling.ts	/^  fail: (a: E) => EResult$/;"	p	interface:MapFns
 fisheye	src/models/state.ts	/^  fisheye?: boolean$/;"	p	interface:State
 fisheye_intensity	src/models/state.ts	/^  fisheye_intensity?: number$/;"	p	interface:State
 focus	src/models/state.ts	/^  focus?: boolean$/;"	p	interface:State
@@ -149,7 +151,6 @@ noise_intensity	src/models/state.ts	/^  noise_intensity?: number$/;"	p	interface
 note_opacity_multiplier	src/models/state.ts	/^  note_opacity_multiplier?: number$/;"	p	interface:State
 note_ring_color	src/models/state.ts	/^  note_ring_color?: string$/;"	p	interface:State
 npm	package.json	/^    "npm": "^6.14.4",$/;"	s	object:dependencies
-ok	src/models/result_handling.ts	/^  ok: (a: T) => TResult$/;"	p	interface:MapFns
 opacity	src/models/state.ts	/^  opacity?: number$/;"	p	interface:State
 override_scanline_pos	src/models/state.ts	/^  override_scanline_pos?: boolean$/;"	p	interface:State
 path	src/models/sprite.ts	/^  public path: string$/;"	p	class:Sprite

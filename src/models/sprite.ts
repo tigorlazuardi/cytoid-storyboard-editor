@@ -18,17 +18,17 @@ export default class Sprite {
   updateState(index: number, state: State): Result<boolean, string> {
     if (this.state[index]) {
       this.state[index] = state
-      return Result.Ok(true)
+      return Result.ok(true)
     } else {
-      return Result.Err('State on the index does not exist.')
+      return Result.err('State on the index does not exist.')
     }
   }
   deleteState(index: number): Result<boolean, string> {
     if (this.state[index]) {
       this.state.splice(index, 1)
-      return Result.Ok(true)
+      return Result.ok(true)
     } else {
-      return Result.Err('State on the index does not exist.')
+      return Result.err('State on the index does not exist.')
     }
   }
 }

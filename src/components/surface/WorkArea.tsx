@@ -5,6 +5,7 @@ import Divider from '@material-ui/core/Divider'
 import { makeStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import clsx from 'clsx'
+import VerticalDivider from './VerticalDivider'
 
 const drawerWidth = 240
 
@@ -41,6 +42,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: theme.spacing(0, 0, 2, 0),
     height: theme.spacing(1),
   },
+  getRange: {
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
 }))
 
 type Props = {
@@ -61,10 +66,12 @@ const WorkArea: FunctionComponent<Props> = ({ open }) => {
         <Typography className={classes.topMargin}>Object: 1</Typography>
         <Divider className={classes.divider} />
         <Card />
+        <Divider className={classes.getRange} />
         <Card />
         <Typography className={classes.topMargin}>Object: 2</Typography>
         <Divider className={classes.divider} />
       </Container>
+      <VerticalDivider />
     </Fragment>
   )
 }

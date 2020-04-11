@@ -20,7 +20,8 @@ const createWindow = () => {
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../build/index.html')}`
   )
-  isDev && win.webContents.openDevTools()
+  // Uncomment this line below and rebuild the file to open dev tools on start
+  // isDev && win.webContents.openDevTools()
   win.on('closed', () => (win = null))
 }
 
