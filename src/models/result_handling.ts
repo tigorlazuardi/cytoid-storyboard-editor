@@ -4,6 +4,7 @@ interface MapFns<T, E, TResult, EResult> {
 }
 /**
  * Creates result/error handler with typesafety for either async or sync operations. No more throws where typesafety disappears.
+ * 'when' for synchronous. 'When' for asynchronous.
  *
  * Synchronous Operation Example:
  *
@@ -17,7 +18,7 @@ interface MapFns<T, E, TResult, EResult> {
  * }
  * foo().when({
  *    Ok : result => console.log(result), // result typed as number: 5
- *    Err: error => console.log(error)    // result typed as string: "oh no"
+ *    Err: error  => console.log(error)   // result typed as string: "oh no"
  * })
  * ```
  *
@@ -33,8 +34,8 @@ interface MapFns<T, E, TResult, EResult> {
  * };
  * foo().then(
  *    Result.When({
- *        success: result => console.log(result), // result typed as number
- *        failure: error => console.log(error)     // result typed as string
+ *        Ok  : result => console.log(result), // result typed as number
+ *        Err : error  => console.log(error)   // result typed as string
  *    })
  * );
  * ```
@@ -51,14 +52,10 @@ export default class Result<TSuccess, TError> {
   public static Err<T>(error: T) {
     return new Result<any, T>(null, error, true)
   }
-
   when<T, E>(mapFns: MapFns<TSuccess, TError, T, E>) {
     return this.isError ? mapFns.Err(this.error) : mapFns.Ok(this.success)
   }
-
-  /**
-   */
-  public static AsyncWhen = <T, E, TResult, TError>(
+  public static When = <T, E, TResult, TError>(
     mapFns: MapFns<T, E, TResult, TError>
   ) => (result: Result<T, E>) => {
     return result.when(mapFns)

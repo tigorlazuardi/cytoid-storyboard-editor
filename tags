@@ -31,7 +31,6 @@
 @types/react-dom	package.json	/^    "@types\/react-dom": "^16.9.0",$/;"	s	object:dependencies
 @types/react-router-dom	package.json	/^    "@types\/react-router-dom": "^5.1.3",$/;"	s	object:devDependencies
 ArcadeContrast	src/models/state.ts	/^  ArcadeContrast?: number$/;"	p	interface:State
-AsyncWhen	src/models/result_handling.ts	/^  public static AsyncWhen = <T, E, TResult, TError>($/;"	p	class:Result
 Config	src/config.ts	/^class Config {$/;"	c
 Cytoid Storyboard Editor	README.md	/^# Cytoid Storyboard Editor$/;"	c
 Developer Notes	README.md	/^# Developer Notes$/;"	c
@@ -44,11 +43,13 @@ Ok	src/models/result_handling.ts	/^  Ok: (a: T) => TResult$/;"	p	interface:MapFn
 Ok	src/models/result_handling.ts	/^  public static Ok<T>(success: T) {$/;"	m	class:Result
 Result	src/models/result_handling.ts	/^export default class Result<TSuccess, TError> {$/;"	c
 Running in Development	README.md	/^### Running in Development$/;"	S
-Sprite	src/models/sprite.ts	/^export default class Sprite {$/;"	c
+Sprite	src/models/sprite.ts	/^export default class Sprite implements StoryboardObject {$/;"	c
 State	src/models/state.ts	/^export default interface State {$/;"	i
+StoryboardObject	src/models/base_object.ts	/^interface StoryboardObject {$/;"	i
 Tape	src/models/state.ts	/^  Tape?: boolean$/;"	p	interface:State
 Validate	src/config.ts	/^interface Validate {$/;"	i
 Variable	src/config.ts	/^interface Variable {$/;"	i
+When	src/models/result_handling.ts	/^  public static When = <T, E, TResult, TError>($/;"	p	class:Result
 addNewState	src/models/sprite.ts	/^  addNewState(state: State) {$/;"	m	class:Sprite
 add_time	src/models/state.ts	/^  add_time?: number$/;"	p	interface:State
 allowJs	tsconfig.json	/^    "allowJs": true,$/;"	b	object:compilerOptions
@@ -86,7 +87,7 @@ concurrently	package.json	/^    "concurrently": "^5.1.0",$/;"	s	object:devDepend
 config	src/config.ts	/^const config = new Config()$/;"	C
 constructor	src/config.ts	/^  constructor() {$/;"	m	class:Config
 constructor	src/models/result_handling.ts	/^  constructor($/;"	m	class:Result
-constructor	src/models/sprite.ts	/^  constructor(id: number, path: string, time: string | number) {$/;"	m	class:Sprite
+constructor	src/models/sprite.ts	/^  constructor($/;"	m	class:Sprite
 contrast	src/models/state.ts	/^  contrast?: number$/;"	p	interface:State
 createWindow	src/electron.ts	/^const createWindow = () => {$/;"	C
 deleteState	src/models/sprite.ts	/^  deleteState(index: number): Result<boolean, string> {$/;"	m	class:Sprite
@@ -122,12 +123,14 @@ focus_size	src/models/state.ts	/^  focus_size?: number$/;"	p	interface:State
 focus_speed	src/models/state.ts	/^  focus_speed?: number$/;"	p	interface:State
 forceConsistentCasingInFileNames	tsconfig.json	/^    "forceConsistentCasingInFileNames": true,$/;"	b	object:compilerOptions
 fov	src/models/state.ts	/^  fov?: number$/;"	p	interface:State
+getID	src/models/base_object.ts	/^  getID: () => number$/;"	p	interface:StoryboardObject
+getID	src/models/sprite.ts	/^  getID(): number {$/;"	m	class:Sprite
 glitch	src/models/state.ts	/^  glitch?: boolean$/;"	p	interface:State
 glitch_intensity	src/models/state.ts	/^  glitch_intensity?: number$/;"	p	interface:State
 gray_scale	src/models/state.ts	/^  gray_scale?: boolean$/;"	p	interface:State
 gray_scale_intensity	src/models/state.ts	/^  gray_scale_intensity?: number$/;"	p	interface:State
 icons	public/manifest.json	/^  "icons": [$/;"	a
-id	src/models/sprite.ts	/^  public id: number$/;"	p	class:Sprite
+id	src/models/sprite.ts	/^    public id: number,$/;"	p	class:Sprite
 include	tsconfig.json	/^  "include": ["src"]$/;"	a
 init	src/config.ts	/^  public init(): Result<boolean, string[]> {$/;"	m	class:Config
 install	package.json	/^    "install": "^0.13.0",$/;"	s	object:dependencies
@@ -153,7 +156,7 @@ note_ring_color	src/models/state.ts	/^  note_ring_color?: string$/;"	p	interface
 npm	package.json	/^    "npm": "^6.14.4",$/;"	s	object:dependencies
 opacity	src/models/state.ts	/^  opacity?: number$/;"	p	interface:State
 override_scanline_pos	src/models/state.ts	/^  override_scanline_pos?: boolean$/;"	p	interface:State
-path	src/models/sprite.ts	/^  public path: string$/;"	p	class:Sprite
+path	src/models/sprite.ts	/^    public path: string,$/;"	p	class:Sprite
 perspective	src/models/state.ts	/^  perspective?: boolean$/;"	p	interface:State
 private	package.json	/^  "private": true,$/;"	b
 production	package.json	/^    "production": [$/;"	a	object:browserslist
@@ -189,7 +192,7 @@ src	public/manifest.json	/^      "src": "logo192.png",$/;"	s	object:icons.1
 src	public/manifest.json	/^      "src": "logo512.png",$/;"	s	object:icons.2
 start	package.json	/^    "start": "react-scripts start",$/;"	s	object:scripts
 start_url	public/manifest.json	/^  "start_url": ".",$/;"	s
-state	src/models/sprite.ts	/^  public state: State[]$/;"	p	class:Sprite
+state	src/models/sprite.ts	/^    public state: State[]$/;"	p	class:Sprite
 storyboard_opacity	src/models/state.ts	/^  storyboard_opacity?: number$/;"	p	interface:State
 strict	tsconfig.json	/^    "strict": true,$/;"	b	object:compilerOptions
 success	src/models/result_handling.ts	/^    private success: TSuccess,$/;"	p	class:Result
@@ -197,7 +200,7 @@ target	tsconfig.json	/^    "target": "es5",$/;"	s	object:compilerOptions
 template	src/models/state.ts	/^  template?: string$/;"	p	interface:State
 test	package.json	/^    "test": "react-scripts test",$/;"	s	object:scripts
 theme_color	public/manifest.json	/^  "theme_color": "#000000",$/;"	s
-time	src/models/sprite.ts	/^  public time: string | number$/;"	p	class:Sprite
+time	src/models/sprite.ts	/^    public time: string | number,$/;"	p	class:Sprite
 time	src/models/state.ts	/^  time?: string$/;"	p	interface:State
 type	public/manifest.json	/^      "type": "image\/png",$/;"	s	object:icons.1
 type	public/manifest.json	/^      "type": "image\/png",$/;"	s	object:icons.2

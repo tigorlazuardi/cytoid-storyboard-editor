@@ -1,8 +1,8 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import React, { FunctionComponent } from 'react'
 
 type Props = {}
 
-const VerticalDivider: FunctionComponent<Props> = ({}) => {
+const VerticalDivider: FunctionComponent<Props> = () => {
   return <div></div>
 }
 

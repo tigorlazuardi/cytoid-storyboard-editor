@@ -6,6 +6,8 @@ import { makeStyles, Theme } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import clsx from 'clsx'
 import VerticalDivider from './VerticalDivider'
+import Sprite from '../../models/sprite'
+import StoryboardObject from '../../models/base_object'
 
 const drawerWidth = 240
 
@@ -42,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: theme.spacing(0, 0, 2, 0),
     height: theme.spacing(1),
   },
-  getRange: {
+  minorHorizontalDivider: {
     marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
@@ -51,6 +53,17 @@ const useStyles = makeStyles((theme: Theme) => ({
 type Props = {
   open: boolean
 }
+
+const cardList: { elType: string; meta?: StoryboardObject }[] = [
+  {
+    elType: 'Sprite',
+    meta: new Sprite(0, 'filename.jpg', 0, []),
+  },
+  {
+    elType: 'Text',
+    meta: new Sprite(0, 'filename.jpg', 0, []),
+  },
+]
 
 const WorkArea: FunctionComponent<Props> = ({ open }) => {
   const classes = useStyles()
@@ -63,13 +76,17 @@ const WorkArea: FunctionComponent<Props> = ({ open }) => {
         })}
         maxWidth={false}
       >
-        <Typography className={classes.topMargin}>Object: 1</Typography>
-        <Divider className={classes.divider} />
-        <Card />
-        <Divider className={classes.getRange} />
-        <Card />
-        <Typography className={classes.topMargin}>Object: 2</Typography>
-        <Divider className={classes.divider} />
+        {cardList.map((el, i) => {
+          return (
+            <Fragment>
+              <Typography className={classes.topMargin}>
+                Object: {i + 1}
+              </Typography>
+              <Divider className={classes.divider} />
+              <Card {...el} />
+            </Fragment>
+          )
+        })}
       </Container>
       <VerticalDivider />
     </Fragment>

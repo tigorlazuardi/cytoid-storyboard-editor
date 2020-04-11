@@ -87,9 +87,9 @@ class ConnectorLine extends Component<Props> {
   detect(): Result<ConnectorDots, string> {
     const { from, to, within } = this
     const a = this.findElement(from)
-    if (!a) return Result.err(`Document with ID "${from}" is not found`)
+    if (!a) return Result.Err(`Document with ID "${from}" is not found`)
     const b = this.findElement(to)
-    if (!b) return Result.err(`Document with ID "${to}" is not found`)
+    if (!b) return Result.Err(`Document with ID "${to}" is not found`)
 
     const anchor0 = this.fromAnchor
     const anchor1 = this.toAnchor
@@ -103,7 +103,7 @@ class ConnectorLine extends Component<Props> {
     if (within) {
       let p = this.findElement(within)
       if (p == null) {
-        return Result.err(
+        return Result.Err(
           `Document with ID "${within}" is not found. Drop "within" prop so it will not be searched.`
         )
       }
@@ -120,6 +120,10 @@ class ConnectorLine extends Component<Props> {
         (window.pageYOffset || document.documentElement.scrollTop) -
         p.scrollTop
     }
+    return Result.Ok({
+      from: { x: 0, y: 0 },
+      to: { x: 0, y: 0 },
+    })
   }
 }
 

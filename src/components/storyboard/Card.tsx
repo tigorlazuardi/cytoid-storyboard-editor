@@ -4,8 +4,12 @@ import C from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import clsx from 'clsx'
+import StoryboardObject from '../../models/base_object'
 
-type Props = {}
+interface Props {
+  elType: string
+  meta?: StoryboardObject
+}
 
 const useStyles = makeStyles({
   root: {
@@ -25,7 +29,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Card: FunctionComponent<Props> = ({}) => {
+const Card: FunctionComponent<Props> = ({ elType, meta = {} }) => {
   const classes = useStyles()
   const [raised, setRaised] = useState(false)
   return (
@@ -46,13 +50,25 @@ const Card: FunctionComponent<Props> = ({}) => {
           Time: 00:00.00
         </Typography>
         <Typography variant='h6' component='h2'>
-          Sprite
+          {elType}
         </Typography>
-        <Typography variant='body2' component='p'>
-          <span style={{ marginRight: 10 }}>filename</span>: picture.png
-          <br />
-          ...
-        </Typography>
+        {Object.entries(meta).map(([key, value], i: number) => {
+          if (i < 3) {
+            return (
+              <Typography variant='body2' component='p'>
+                {key}: {value}
+              </Typography>
+            )
+          } else if (i > 4) {
+            return null
+          } else {
+            return (
+              <Typography variant='body2' component='p'>
+                ...
+              </Typography>
+            )
+          }
+        })}
       </CardContent>
     </C>
   )
